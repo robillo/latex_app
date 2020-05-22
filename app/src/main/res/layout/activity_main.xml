@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/katexV"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:padding="20dp"
+        android:text="@string/sample_latex"
+        android:id="@+id/defaultLatexTv"/>
+
+    <katex.hourglass.in.mathlib.MathView
+        app:setTextColor="#000000"
+        app:setTextSize="18sp"
+        app:setClickable="true"
+        app:setText="@string/sample_latex"
+        app:layout_constraintTop_toBottomOf="@id/defaultLatexTv"
+        app:layout_constraintBottom_toTopOf="@id/mathView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#EFEFEF"
+        app:layout_constraintVertical_weight="1"
+        android:id="@+id/katexV"/>
+
+    <io.github.kexanie.library.MathView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:engine="KaTeX"
+        app:setTextSize="18sp"
+        app:text="@string/sample_latex"
+        app:layout_constraintVertical_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/katexV"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/mathView">
+
+    </io.github.kexanie.library.MathView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
